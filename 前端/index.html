@@ -1,33 +1,4 @@
 <!DOCTYPE html>
-<!--
-本源码由Ancer修改，美化前端CSS，请更改第 212 行的后端地址，否则无法成功开户，Ancer的博客：https://blog.anvps.cn/
-
-                         _oo0oo_
-                        o8888888o
-                        88" . "88
-                        (| -_- |)
-                        0\  =  /0
-                      ___/`---'\___
-                    .' \\|     |// '.
-                   / \\|||  :  |||// \
-                  / _||||| -:- |||||- \
-                 |   | \\\  - /// |   |
-                 | \_|  ''\---/''  |_/ |
-                 \  .-\__  '-'  ___/-. /
-               ___'. .'  /--.--\  `. .'___
-            ."" '<  `.___\_<|>_/___.' >' "".
-           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-           \  \ `_.   \_ __\ /__ _/   .-` /  /
-       =====`-.____`.___ \_____/___.-`___.-'=====
-                         `=---='
- 
- 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
-            佛祖保佑                   源码永无BUG
- 
- 阿伟，你又在看源码哦，休息一下吧，去看个片好不好
--->
 <html>
 
 <head>
@@ -146,17 +117,12 @@
     <div class="container">
         <i class="fa-solid fa-cloud" style="font-size:24px;color:#2b7cff;"></i><a style="font-size:24px;">
             晚霞云4群免费机网页开户</a>
-       <div class="hr1"></div>
-       <!----
-        <form action="verify_login.php" method="post">
+        <form>
             <div class="box">
                 <i class="icon-search"></i>
                 <input type="text" id="username" placeholder="登录账户">
                 <br>
-                <input type="password" id="password" placeholder="登录密码">
-                <br>
-                <img src="generate_verification_code.php" alt="验证码图形">
-                <input type="text" id="verification_code" name="verification_code" placeholder="验证码">
+                <input type="password" id="password" placeholder="登录密码"
                 <br>
                 <button class="button" onclick="tijiao()">立即开户</button>
                 <a
@@ -171,66 +137,21 @@
             </div>
         </form>
     </div>
--->
-    <form id="signupForm">
-        <div class="box">
-            <i class="icon-search"></i>
-            <input type="text" id="username" name="username" placeholder="登录账户">
-            <br>
-            <input type="password" id="password" name="password" placeholder="登录密码">
-            <br>
-            <img src="captcha.php" alt="验证码图形">
-            <input type="text" id="verification_code" name="verification_code" placeholder="验证码">
-            <br>
-            <button type="button" class="button" onclick="registerUser()">立即开户</button>
-            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=fXw5Ph2b6d4cDsTpYynBoJriy1u_RP8y&authKey=AXH6zjuwnXHtB3jnKvUv8Ea%2Fu5sIX4HQKXVPxvRQ%2FU3riQvjHz4Kj7SzGKNmSu6Q&noverify=0&group_code=122184835">
-                <button type="button" class="button">加入QQ群</button>
-            </a>
-            <hr class="hr1">
-            <footer class="col-sm-12 text-center">
-                <p>远程桌面连接地址:<a class="text_footer"><strong>ydn.rpyf.top:3388</strong></a></p><br>
-                <p class="m-b-0">版权所有 © 2024 <a class="text_footer" href="/">晚霞云4群免费机开户系统</a>. 保留所有权利</p>
-            </footer>
-        </div>
-    </form>
+
     <script>
-        function registerUser() {
+        window.onload = function () {
+            var container = document.querySelector('.container');
+            container.style.transform = 'scale(1)';
+        }
+
+        function tijiao() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            var verificationCode = document.getElementById("verification_code").value;
-            var createUserUrl = 'http://222.186.150.253:54378/api';
-            var verifyCodeUrl = 'verify_code.php'; // Assuming verify_code.php is in the same directory as the HTML
-    
-            // Perform verification of the code first
-            fetch(verifyCodeUrl, {
-                method: 'POST',
-                body: JSON.stringify({ verification_code: verificationCode }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.valid) {
-                    // If verification succeeds, proceed with user creation
-                    fetch(createUserUrl, {
-                        method: 'POST',
-                        body: JSON.stringify({ username: username, password: password }),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => console.log(data))
-                    .catch(error => console.error('Error:', error));
-                } else {
-                    console.log('Verification code is invalid');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        }
+            var apiUrl = '<!--后端API地址，可使用内网穿透-->';
+            var fullUrl = apiUrl + '?name=' + encodeURIComponent(username) + '&pwd=' + encodeURIComponent(password);
+            window.location.href = fullUrl;
+        } 	
     </script>
-    
 </body>
 
 </html>
