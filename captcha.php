@@ -1,29 +1,27 @@
 <?php
+session_start();
 
-function generate_captcha() {
-    $width = 160;
-    $height = 50;
-    $characters = '0123456789';
-    $rand_string = '';
+// 生成一个包含4位数字的验证码
+$verificationCode = strval(rand(1000, 9999));
 
-    for ($i = 0; $i < 4; $i++) {
-        $rand_string .= $characters[rand(0, strlen($characters) - 1)];
-    }
+// 存储验证码到会话中
+$_SESSION['verification_code'] = $verificationCode;
 
-    $image = imagecreatetruecolor($width, $height);
-    $background_color = imagecolorallocate($image, 255, 255, 255);
-    $text_color = imagecolorallocate($image, 0, 0, 0);
+// 创建一个图像
+$image = imagecreate(120, 40);
 
-    imagestring($image, 10, 10, 10, $rand_string, $text_color);
+// 设置背景颜色为白色
+$backgroundColor = imagecolorallocate($image, 255, 255, 255);
 
-    ob_start();
-    imagepng($image);
-    $captcha_data = ob_get_contents();
-    ob_end_clean();
+// 设置文本颜色为黑色
+$textColor = imagecolorallocate($image, 0, 0, 0);
 
-    return $captcha_data;
-}
+// 在图像上写入验证码
+imagestring($image, 5, 30, 12, $verificationCode, $textColor);
 
-$captcha = generate_captcha();
-header('Content-Type: image/png');
-echo $captcha;
+// 输出图像
+header('Content-type: image/png');
+imagepng($image);
+
+// 释放内存占用
+imagedestroy($image);
