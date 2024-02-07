@@ -146,6 +146,8 @@
     <div class="container">
         <i class="fa-solid fa-cloud" style="font-size:24px;color:#2b7cff;"></i><a style="font-size:24px;">
             晚霞云4群免费机网页开户</a>
+       <div class="hr1"></div>
+       <!----
         <form action="verify_login.php" method="post">
             <div class="box">
                 <i class="icon-search"></i>
@@ -169,21 +171,66 @@
             </div>
         </form>
     </div>
-
+-->
+    <form id="signupForm">
+        <div class="box">
+            <i class="icon-search"></i>
+            <input type="text" id="username" name="username" placeholder="登录账户">
+            <br>
+            <input type="password" id="password" name="password" placeholder="登录密码">
+            <br>
+            <img src="captcha.php" alt="验证码图形">
+            <input type="text" id="verification_code" name="verification_code" placeholder="验证码">
+            <br>
+            <button type="button" class="button" onclick="registerUser()">立即开户</button>
+            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=fXw5Ph2b6d4cDsTpYynBoJriy1u_RP8y&authKey=AXH6zjuwnXHtB3jnKvUv8Ea%2Fu5sIX4HQKXVPxvRQ%2FU3riQvjHz4Kj7SzGKNmSu6Q&noverify=0&group_code=122184835">
+                <button type="button" class="button">加入QQ群</button>
+            </a>
+            <hr class="hr1">
+            <footer class="col-sm-12 text-center">
+                <p>远程桌面连接地址:<a class="text_footer"><strong>ydn.rpyf.top:3388</strong></a></p><br>
+                <p class="m-b-0">版权所有 © 2024 <a class="text_footer" href="/">晚霞云4群免费机开户系统</a>. 保留所有权利</p>
+            </footer>
+        </div>
+    </form>
     <script>
-        window.onload = function () {
-            var container = document.querySelector('.container');
-            container.style.transform = 'scale(1)';
-        }
-
-        function tijiao() {
+        function registerUser() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            var apiUrl = '<!--后端API地址，可使用内网穿透-->';
-            var fullUrl = apiUrl + '?name=' + encodeURIComponent(username) + '&pwd=' + encodeURIComponent(password);
-            window.location.href = fullUrl;
-        } 	
+            var verificationCode = document.getElementById("verification_code").value;
+            var createUserUrl = 'http://222.186.150.253:54378/api';
+            var verifyCodeUrl = 'verify_code.php'; // Assuming verify_code.php is in the same directory as the HTML
+    
+            // Perform verification of the code first
+            fetch(verifyCodeUrl, {
+                method: 'POST',
+                body: JSON.stringify({ verification_code: verificationCode }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.valid) {
+                    // If verification succeeds, proceed with user creation
+                    fetch(createUserUrl, {
+                        method: 'POST',
+                        body: JSON.stringify({ username: username, password: password }),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Error:', error));
+                } else {
+                    console.log('Verification code is invalid');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
+    
 </body>
 
 </html>
