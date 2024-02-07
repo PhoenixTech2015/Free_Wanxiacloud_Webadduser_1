@@ -38,10 +38,12 @@
     <title>晚霞云4群免费机网页开户</title>
     <style>
         body {
-            background-image: url(./login-bg.jpeg);
+            background: url(https://acgapi.bobocloud.eu.org/api.php);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
             background-size: cover;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
             display: flex;
@@ -142,7 +144,8 @@
 
 <body>
     <div class="container">
-        <i class="fa-solid fa-cloud" style="font-size:24px;color:#2b7cff;"></i><a style="font-size:24px;"> 晚霞云4群免费机网页开户</a>
+        <i class="fa-solid fa-cloud" style="font-size:24px;color:#2b7cff;"></i><a style="font-size:24px;">
+            晚霞云4群免费机网页开户</a>
         <form action="verify_login.php" method="post">
             <div class="box">
                 <i class="icon-search"></i>
@@ -154,7 +157,8 @@
                 <input type="text" id="verification_code" name="verification_code" placeholder="验证码">
                 <br>
                 <button class="button" onclick="tijiao()">立即开户</button>
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=fXw5Ph2b6d4cDsTpYynBoJriy1u_RP8y&authKey=AXH6zjuwnXHtB3jnKvUv8Ea%2Fu5sIX4HQKXVPxvRQ%2FU3riQvjHz4Kj7SzGKNmSu6Q&noverify=0&group_code=122184835">
+                <a
+                    href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=fXw5Ph2b6d4cDsTpYynBoJriy1u_RP8y&authKey=AXH6zjuwnXHtB3jnKvUv8Ea%2Fu5sIX4HQKXVPxvRQ%2FU3riQvjHz4Kj7SzGKNmSu6Q&noverify=0&group_code=122184835">
                     <button class="button">加入QQ群</button>
                 </a>
                 <hr class="hr1">
@@ -176,7 +180,7 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
             var apiUrl = '<!--后端API地址，可使用内网穿透-->';
-            var fullUrl = apiUrl + '?name=' + encodeURIComponent(username) + '&pwd=' + encodeURIComponent(password) ;
+            var fullUrl = apiUrl + '?name=' + encodeURIComponent(username) + '&pwd=' + encodeURIComponent(password);
             window.location.href = fullUrl;
         } 	
     </script>
