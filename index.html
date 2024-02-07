@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+本源码由Ancer修改，美化前端CSS，请更改第 212 行的后端地址，否则无法成功开户，Ancer的博客：https://blog.anvps.cn/
+
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+ 
+ 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+            佛祖保佑                   源码永无BUG
+ 
+ 阿伟，你又在看源码哦，休息一下吧，去看个片好不好
+-->
+<html>
+<head>
+    <link href="node_modules/pnotify/dist/PNotifyBrightTheme.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://vuejs.org//logo.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西瓜云网页开户</title>
+    <style>
+        body {
+            background-image: url(./background.jpeg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            transform: scale(0);
+            transition: transform 0.4s ease;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        <style>
+        body {
+            background-image: url(./login-bg.jpeg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            /* Adjusted width */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .styled-link {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .styled-link:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: #4d5259;
+            line-height: 1.5;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 0 0 10px;
+            margin-bottom: 0px !important;
+        }
+
+        .text_footer {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.5;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: transparent;
+            text-decoration: none;
+            color: #2b7cff;
+            transition: .2s linear;
+            outline: none !important;
+        }
+
+        .hr1 {
+            border-top-color: rgba(77, 82, 89, 0.05);
+            margin: 1rem auto;
+            border: none;
+        }
+        .hr0 {
+            border-top-color: #00000000;
+            margin: 0.5rem auto;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <i class="fa-solid fa-cloud" style="font-size:24px;color:#2b7cff;"></i><a style="font-size:24px;"> 西瓜云网页开户</a>
+        <p>本网站由 <a class="text_footer" href="https://console.anvps.cn/">岸云数据</a> 提供服务器</p>
+        <p>由 <a class="text_footer" href="https://api.vvhan.com/api/qqCard?qq=1042615991">Ancer</a> 提供网站技术支持</p>
+        <form>
+            <div class="box">
+                <i class="icon-search"></i>
+                <input type="text" id="username" placeholder="登录账户">
+                <br>
+                <input type="password" id="password" placeholder="登录密码">
+                <br>
+                <input type="text" id="key" placeholder="开户卡密">
+                <br><hr class="hr0">
+                <button class="button" onclick="tijiao()">立即开户</button>
+                <a href="https://qm.qq.com/cgi-bin/qm/qr?k=gEyzKdTbykP-thMjb7ae4iQ2t7zW1kL3&jump_from=webapi&authKey=fL1Yh2ofRZpBl38G243KndpDbBp5YAYZK+fFuRZsC8pKN52n1HBDyHn1l9qApQZI">
+                    <button class="button">加入QQ群</button>
+                </a>
+                <hr class="hr1">
+                <footer class="col-sm-12 text-center">
+                    <p>远程桌面连接地址:<a class="text_footer"><strong>38.47.100.139:26666</strong></a></p><br>
+                    <p class="m-b-0">Copyright © 2023 <a class="text_footer" href="/">西瓜云开户系统</a>. All right reserved</p>
+                </footer>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var container = document.querySelector('.container');
+            container.style.transform = 'scale(1)';
+        }
+
+        function tijiao() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var key = document.getElementById("key").value;
+            var apiUrl = '<!--后端API地址，可使用内网穿透-->';
+            var fullUrl = apiUrl + '?name=' + encodeURIComponent(username) + '&pwd=' + encodeURIComponent(password) + '&key=' + encodeURIComponent(key);
+            window.location.href = fullUrl;
+        } 	
+    </script>
+</body>
+
+</html>
